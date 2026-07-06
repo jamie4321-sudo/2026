@@ -98,8 +98,11 @@ section.alt { background: var(--bg2); }
 .hl-feature { margin-bottom: 40px; }
 .hl-feature .shot-grid { margin-top: 20px; }
 .shot-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 36px; }
-.shot-card { background: var(--bg3); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); transition: transform .3s ease, box-shadow .3s ease; }
-.shot-card:hover { transform: translateY(-6px); box-shadow: 0 16px 34px rgba(0,0,0,0.35); }
+.shot-card { display: block; background: var(--bg3); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; text-decoration: none; color: inherit; cursor: pointer; }
+.shot-card:hover { transform: translateY(-6px); box-shadow: 0 16px 34px rgba(0,0,0,0.35); border-color: rgba(204,255,0,0.35); }
+.shot-cap-link { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.shot-cap-arrow { color: var(--lime); font-size: 14px; font-weight: 900; flex-shrink: 0; transition: transform .25s ease; }
+.shot-card:hover .shot-cap-arrow { transform: translateX(4px); }
 .shot-frame { background: #1a1a1a; padding: 18px; display: flex; align-items: center; justify-content: center; min-height: 280px; }
 .shot-frame img { max-width: 100%; max-height: 360px; border-radius: 8px; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.45); }
 .shot-cap { padding: 16px 18px; border-top: 1px solid var(--line); }
@@ -346,18 +349,18 @@ a:focus-visible { outline: 3px solid var(--lime); outline-offset: 2px; }
       <div class="hl-impact"><div class="hl-impact-lbl">만들어낸 변화</div><div class="hl-impact-txt">외주·수작업 의존 없는 자체 디지털 역량으로 운영 데이터가 쌓이고 있습니다</div></div>
     </div>
     <div class="shot-grid">
-      <div class="shot-card">
+      <a class="shot-card" href="https://script.google.com/a/macros/linkagelab.co.kr/s/AKfycbw6EbXMaQPCZteAy7QGJVBMZN1EvJvdeKsjq27g4agi5qfvJplIyXHenbZQNXPhBc1ocw/exec" target="_blank" rel="noopener">
         <div class="shot-frame"><img src="numbers-app.png" alt="오아시스 넘버스앱 모바일 화면"></div>
-        <div class="shot-cap"><b>오아시스 넘버스앱</b><span>모바일 · 층별 발주 수량을 현장에서 바로 입력</span></div>
-      </div>
-      <div class="shot-card">
+        <div class="shot-cap shot-cap-link"><div><b>오아시스 넘버스앱</b><span>모바일 · 층별 발주 수량을 현장에서 바로 입력</span></div><span class="shot-cap-arrow">↗</span></div>
+      </a>
+      <a class="shot-card" href="https://script.google.com/a/macros/linkagelab.co.kr/s/AKfycbx-hVdnp5_I11plZTJoHRAtua_liHwA6L5EkFL4CjXqmQOU1T8uHMK9aCKv-qCEhLvG/exec" target="_blank" rel="noopener">
         <div class="shot-frame"><img src="garden-dashboard.png" alt="가든 대시보드 웹 화면"></div>
-        <div class="shot-cap"><b>가든 대시보드</b><span>웹 · 구역별 작업 · 이슈 · 식물 상태를 한눈에 확인</span></div>
-      </div>
-      <div class="shot-card">
+        <div class="shot-cap shot-cap-link"><div><b>가든 대시보드</b><span>웹 · 구역별 작업 · 이슈 · 식물 상태를 한눈에 확인</span></div><span class="shot-cap-arrow">↗</span></div>
+      </a>
+      <a class="shot-card" href="https://script.google.com/a/macros/linkagelab.co.kr/s/AKfycbw4AFOJgAyT5KXj9IUsWG5GooyWsdhMr7eu2930AbAyEKHHxbtOwmsojsLhMi5iXEIa/exec" target="_blank" rel="noopener">
         <div class="shot-frame"><img src="crew-attendance.png" alt="중증장애인턴크루 출퇴근 기록"></div>
-        <div class="shot-cap"><b>중증장애인턴크루 출퇴근 기록</b><span>디지털로 정리되는 출퇴근 · 근무 데이터</span></div>
-      </div>
+        <div class="shot-cap shot-cap-link"><div><b>중증장애인턴크루 출퇴근 기록</b><span>디지털로 정리되는 출퇴근 · 근무 데이터</span></div><span class="shot-cap-arrow">↗</span></div>
+      </a>
     </div>
   </div>
   <div class="hl-grid">
