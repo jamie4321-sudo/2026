@@ -76,11 +76,11 @@ section.alt { background: var(--bg2); }
 
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
-.sum-grid > .reveal.visible:nth-child(2), .metric-grid > .reveal.visible:nth-child(2), .hl-grid > .reveal.visible:nth-child(2), .esg-grid > .reveal.visible:nth-child(2), .part-grid > .reveal.visible:nth-child(2), .imp-grid > .reveal.visible:nth-child(2), .bm-photos > .reveal.visible:nth-child(2), .bm-steps > .reveal.visible:nth-child(2) { transition-delay: .1s; }
-.sum-grid > .reveal.visible:nth-child(3), .metric-grid > .reveal.visible:nth-child(3), .hl-grid > .reveal.visible:nth-child(3), .esg-grid > .reveal.visible:nth-child(3), .part-grid > .reveal.visible:nth-child(3), .imp-grid > .reveal.visible:nth-child(3), .bm-photos > .reveal.visible:nth-child(3), .bm-steps > .reveal.visible:nth-child(3) { transition-delay: .2s; }
-.sum-grid > .reveal.visible:nth-child(4), .metric-grid > .reveal.visible:nth-child(4), .hl-grid > .reveal.visible:nth-child(4), .bm-steps > .reveal.visible:nth-child(4) { transition-delay: .3s; }
-.hl-grid > .reveal.visible:nth-child(5), .bm-steps > .reveal.visible:nth-child(5) { transition-delay: .4s; }
-.hl-grid > .reveal.visible:nth-child(6), .bm-steps > .reveal.visible:nth-child(6) { transition-delay: .5s; }
+.sum-grid > .reveal.visible:nth-child(2), .metric-grid > .reveal.visible:nth-child(2), .hl-grid > .reveal.visible:nth-child(2), .esg-grid > .reveal.visible:nth-child(2), .part-grid > .reveal.visible:nth-child(2), .imp-grid > .reveal.visible:nth-child(2), .bm-photos > .reveal.visible:nth-child(2) { transition-delay: .1s; }
+.sum-grid > .reveal.visible:nth-child(3), .metric-grid > .reveal.visible:nth-child(3), .hl-grid > .reveal.visible:nth-child(3), .esg-grid > .reveal.visible:nth-child(3), .part-grid > .reveal.visible:nth-child(3), .imp-grid > .reveal.visible:nth-child(3), .bm-photos > .reveal.visible:nth-child(3) { transition-delay: .2s; }
+.sum-grid > .reveal.visible:nth-child(4), .metric-grid > .reveal.visible:nth-child(4), .hl-grid > .reveal.visible:nth-child(4) { transition-delay: .3s; }
+.hl-grid > .reveal.visible:nth-child(5) { transition-delay: .4s; }
+.hl-grid > .reveal.visible:nth-child(6) { transition-delay: .5s; }
 .sum-card, .metric-card, .hl-card, .esg-card, .part-card, .imp-card, .bm-step, .bm-photo { transition: opacity .6s ease, transform .35s ease, box-shadow .35s ease, border-color .35s ease; }
 .sum-card:hover, .metric-card:hover, .hl-card:hover, .part-card:hover, .imp-card:hover, .esg-card:hover, .bm-step:hover, .bm-photo:hover { transform: translateY(-7px); box-shadow: 0 18px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(204,255,0,0.22); }
 
@@ -174,17 +174,33 @@ section.alt { background: var(--bg2); }
 /* ── 하반기 성과목표: 라면존 벤치마킹 ── */
 .bm-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 44px; }
 .bm-photo { background: var(--bg3); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
-.bm-photo-frame { width: 100%; aspect-ratio: 4 / 3; background: #1a1a1a; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+.bm-photo-frame { width: 100%; aspect-ratio: 16 / 9; background: #1a1a1a; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
 .bm-photo-frame::before { content: 'PHOTO'; position: absolute; font-size: 11px; font-weight: 700; letter-spacing: .2em; color: var(--dim); }
 .bm-photo-frame img { position: relative; width: 100%; height: 100%; object-fit: cover; display: block; }
 .bm-photo-cap { padding: 14px 18px; border-top: 1px solid var(--line); }
 .bm-photo-cap b { display: block; color: var(--lime); font-size: 13px; font-weight: 700; margin-bottom: 3px; }
 .bm-photo-cap span { font-size: 11.5px; color: var(--muted); font-weight: 300; line-height: 1.6; }
-.bm-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.bm-flow { display: grid; grid-template-columns: 1fr 44px 1fr 44px 1fr; align-items: stretch; }
 .bm-step { background: var(--bg3); border-top: 4px solid var(--lime); border-radius: 0 0 var(--radius) var(--radius); padding: 24px; }
-.bm-step-num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--lime); color: #1A1A1A; font-size: 13px; font-weight: 900; margin-bottom: 12px; }
+.bm-step-num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--lime); color: #1A1A1A; font-size: 13px; font-weight: 900; margin-bottom: 12px; box-shadow: 0 0 14px rgba(204,255,0,0.35); }
 .bm-step-t { font-size: 14px; font-weight: 700; line-height: 1.5; margin-bottom: 8px; }
 .bm-step-d { font-size: 12.5px; color: var(--muted); font-weight: 300; line-height: 1.8; }
+.bm-arrow { display: flex; align-items: center; justify-content: center; }
+.bm-arrow span { color: var(--lime); font-size: 24px; font-weight: 900; line-height: 1; text-shadow: 0 0 12px rgba(204,255,0,0.45); animation: bmFlowH 1.6s ease-in-out infinite; }
+@keyframes bmFlowH { 0%,100% { transform: translateX(0); opacity: .5; } 50% { transform: translateX(6px); opacity: 1; } }
+@keyframes bmFlowV { 0%,100% { transform: rotate(90deg) translateX(0); opacity: .5; } 50% { transform: rotate(90deg) translateX(6px); opacity: 1; } }
+.bm-return { grid-column: 1 / -1; height: 54px; margin: 12px 16% 14px; border-right: 2px dashed rgba(204,255,0,0.55); border-bottom: 2px dashed rgba(204,255,0,0.55); border-bottom-right-radius: 24px; position: relative; }
+.bm-return::after { content: ''; position: absolute; left: -7px; bottom: -12px; border-left: 7px solid transparent; border-right: 7px solid transparent; border-top: 10px solid var(--lime); filter: drop-shadow(0 0 6px rgba(204,255,0,0.5)); }
+.bm-flow > .reveal.visible:nth-child(2)  { transition-delay: .08s; }
+.bm-flow > .reveal.visible:nth-child(3)  { transition-delay: .16s; }
+.bm-flow > .reveal.visible:nth-child(4)  { transition-delay: .24s; }
+.bm-flow > .reveal.visible:nth-child(5)  { transition-delay: .32s; }
+.bm-flow > .reveal.visible:nth-child(6)  { transition-delay: .40s; }
+.bm-flow > .reveal.visible:nth-child(7)  { transition-delay: .48s; }
+.bm-flow > .reveal.visible:nth-child(8)  { transition-delay: .56s; }
+.bm-flow > .reveal.visible:nth-child(9)  { transition-delay: .64s; }
+.bm-flow > .reveal.visible:nth-child(10) { transition-delay: .72s; }
+.bm-flow > .reveal.visible:nth-child(11) { transition-delay: .80s; }
 
 #crew { padding: 0; position: relative; min-height: 92vh; display: flex; align-items: flex-end; overflow: hidden; }
 .crew-photo {
@@ -234,7 +250,12 @@ footer { border-top: 1px solid var(--line); padding: 40px 80px; display: flex; j
 
 @media (max-width: 1024px) {
   .sum-grid, .metric-grid { grid-template-columns: repeat(2, 1fr); }
-  .hl-grid, .esg-grid, .part-grid, .imp-grid, .shot-grid, .bm-photos, .bm-steps { grid-template-columns: 1fr; }
+  .hl-grid, .esg-grid, .part-grid, .imp-grid, .shot-grid, .bm-photos { grid-template-columns: 1fr; }
+  .bm-flow { grid-template-columns: 1fr; }
+  .bm-arrow { height: 40px; }
+  .bm-arrow span { animation: bmFlowV 1.6s ease-in-out infinite; }
+  .bm-return { height: 40px; margin: 0; border: none; border-radius: 0; }
+  .bm-return::after { left: 50%; top: 50%; bottom: auto; transform: translate(-50%, -50%); }
   section, .hero, footer, #closing { padding-left: 36px; padding-right: 36px; }
   .hero-rule { left: 36px; }
   nav { padding: 0 22px; }
@@ -542,49 +563,54 @@ a:focus-visible { outline: 3px solid var(--lime); outline-offset: 2px; }
   <div class="reveal">
     <div class="section-tag">하반기 성과목표</div>
     <h2 class="section-title">운영서비스 업그레이드 — <em>라면존 외부 우수 운영사례 벤치마킹</em></h2>
-    <p class="section-desc">블로그·SNS 등에서 외부 우수 라면존과 유사 무인 식음공간 사례를 검토해 벤치마킹 후보를 선정했습니다. 하반기에는 직접 현장을 방문해 배울 점을 확인하고, 아지트 라면존 운영 개선으로 이어가겠습니다.</p>
+    <p class="section-desc">블로그·SNS 사전 조사를 통해 첫 번째 벤치마킹 대상으로 <b style="color:var(--white);font-weight:500;">농심 너구리 라면가게</b>를 선정했습니다. 하반기에 직접 현장을 방문해 운영 방식을 살펴보고, 아지트 라면존 운영 개선으로 이어가겠습니다.</p>
   </div>
   <div class="plan-note reveal">성과 목표 — 하반기 <b>현장 벤치마킹 1회 이상 실시</b> 및 운영 개선과제 도출, 개선과제 중 <b>1건 이상 서비스 적용 또는 파일럿 운영 검토</b></div>
   <div class="bm-photos">
     <div class="bm-photo reveal">
-      <div class="bm-photo-frame"><img src="benchmark-1.jpg" alt="벤치마킹 후보 공간 1"></div>
-      <div class="bm-photo-cap"><b>벤치마킹 후보 ①</b><span>사전 조사에서 확인한 외부 우수 라면존 사례</span></div>
+      <div class="bm-photo-frame"><img src="benchmark-1.jpg" alt="농심 너구리 라면가게 — 공간 전경"></div>
+      <div class="bm-photo-cap"><b>농심 너구리 라면가게 · 공간</b><span>첫 번째 벤치마킹 대상 — 공간 구성과 브랜딩</span></div>
     </div>
     <div class="bm-photo reveal">
-      <div class="bm-photo-frame"><img src="benchmark-2.jpg" alt="벤치마킹 후보 공간 2"></div>
-      <div class="bm-photo-cap"><b>벤치마킹 후보 ②</b><span>큐레이션 · 진열 · POP 구성이 돋보이는 공간</span></div>
+      <div class="bm-photo-frame"><img src="benchmark-2.jpg" alt="농심 너구리 라면가게 — 상품 진열과 POP"></div>
+      <div class="bm-photo-cap"><b>큐레이션 · 진열 · POP</b><span>상품 구성과 안내물 연출에서 참고할 포인트</span></div>
     </div>
     <div class="bm-photo reveal">
-      <div class="bm-photo-frame"><img src="benchmark-3.jpg" alt="벤치마킹 후보 공간 3"></div>
-      <div class="bm-photo-cap"><b>벤치마킹 후보 ③</b><span>동선 · 위생 · 운영 방식에서 참고할 무인 식음공간</span></div>
+      <div class="bm-photo-frame"><img src="benchmark-3.jpg" alt="농심 너구리 라면가게 — 이용 동선과 조리 공간"></div>
+      <div class="bm-photo-cap"><b>동선 · 조리기기 · 위생</b><span>이용 흐름과 운영 방식에서 배울 점</span></div>
     </div>
   </div>
-  <div class="bm-steps">
+  <div class="bm-flow">
     <div class="bm-step reveal">
       <div class="bm-step-num">1</div>
       <div class="bm-step-t">벤치마킹 대상 선정</div>
-      <div class="bm-step-d">외부 우수 라면존 및 유사 무인 식음공간 중에서 벤치마킹 대상을 선정합니다.</div>
+      <div class="bm-step-d">첫 번째 대상으로 농심 너구리 라면가게를 선정했으며, 이후 유사 무인 식음공간으로 대상을 확대해 나갑니다.</div>
     </div>
+    <div class="bm-arrow reveal" aria-hidden="true"><span>→</span></div>
     <div class="bm-step reveal">
       <div class="bm-step-num">2</div>
       <div class="bm-step-t">현장 벤치마킹 실시</div>
       <div class="bm-step-d">하반기 중 현장 벤치마킹을 1회 이상 실시합니다.</div>
     </div>
+    <div class="bm-arrow reveal" aria-hidden="true"><span>→</span></div>
     <div class="bm-step reveal">
       <div class="bm-step-num">3</div>
       <div class="bm-step-t">운영 요소 분석</div>
       <div class="bm-step-d">큐레이션, 상품 진열, POP, 이용 동선, 조리기기, 위생관리, 재고·보충 방식 등 운영 요소를 분석하고 이벤트 아이디어를 수집합니다.</div>
     </div>
+    <div class="bm-return reveal" aria-hidden="true"></div>
     <div class="bm-step reveal">
       <div class="bm-step-num">4</div>
       <div class="bm-step-t">아지트 라면존과 비교</div>
       <div class="bm-step-d">아지트 라면존의 현재 운영 방식과 비교 분석해 차이점과 개선 포인트를 찾습니다.</div>
     </div>
+    <div class="bm-arrow reveal" aria-hidden="true"><span>→</span></div>
     <div class="bm-step reveal">
       <div class="bm-step-num">5</div>
       <div class="bm-step-t">인사이트 리포트 작성</div>
       <div class="bm-step-d">회차별 인사이트 리포트를 작성하고, 적용 가능한 개선과제를 도출합니다.</div>
     </div>
+    <div class="bm-arrow reveal" aria-hidden="true"><span>→</span></div>
     <div class="bm-step reveal">
       <div class="bm-step-num">6</div>
       <div class="bm-step-t">서비스 적용 · 아지트 공유</div>
